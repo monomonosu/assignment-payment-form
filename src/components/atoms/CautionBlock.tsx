@@ -1,4 +1,5 @@
-import React, { InputHTMLAttributes } from "react";
+import type React from "react";
+import type { InputHTMLAttributes } from "react";
 
 interface TextInputProps extends InputHTMLAttributes<HTMLDivElement> {
   //   NOTE: 下記のようなPropsを追加したい所ですが現状必要ないものを含めないようにしています。
