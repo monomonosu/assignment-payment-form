@@ -9,7 +9,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLDivElement> {
 
 export const CautionBlock: React.FC<TextInputProps> = ({ children }) => {
   return (
-    <div className=" border border-yellow-600 bg-yellow-100 p-4">
+    <div className=" border border-yellow-600 bg-yellow-100 p-4 rounded-sm">
       <p className="text-yellow-700">{children}</p>
     </div>
   );

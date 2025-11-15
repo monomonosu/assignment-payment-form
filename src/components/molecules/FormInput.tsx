@@ -1,5 +1,5 @@
 type Props = {
-  label: string;
+  label?: string;
   required?: boolean;
   children: React.ReactNode;
 };
@@ -10,9 +10,12 @@ export const FormInput: React.FC<Props> = (props: Props) => {
   return (
     <>
       <div className="flex mb-1">
-        <label htmlFor="input" className="text-sm">
-          {label}
-        </label>
+        {label && (
+          <label htmlFor="input" className="text-sm">
+            {label}
+          </label>
+        )}
+
         {required && (
           <span className="ml-2 px-1 py-0.5 text-xs text-white bg-red-500 rounded-sm">
             必須
