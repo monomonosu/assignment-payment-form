@@ -10,15 +10,17 @@ type SelectOption = {
 
 interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
   options: SelectOption[];
+  error?: boolean;
 }
 
-export const Select: React.FC<SelectProps> = ({ options, ...props }) => {
+export const Select: React.FC<SelectProps> = ({ options, error, ...props }) => {
   return (
     <div className="relative">
       <select
         id="input"
         className={clsx(
           "border border-natural-gray02 rounded-sm px-2 py-2 w-full appearance-none",
+          error && "border-red-500",
         )}
         {...props}
       >
