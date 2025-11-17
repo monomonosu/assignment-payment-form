@@ -22,3 +22,14 @@ export const GapWrapper: React.FC<GapWrapperProps> = ({
     </div>
   );
 };
+
+export const CenterWrapper: React.FC<InputHTMLAttributes<HTMLDivElement>> = ({
+  children,
+  ...props
+}) => {
+  return (
+    <div className="flex justify-center items-center" {...props}>
+      {children}
+    </div>
+  );
+};
