@@ -13,7 +13,7 @@ const TextInput: React.FC<TextInputProps> = ({ error, ...props }) => {
     <input
       id="input"
       className={clsx(
-        "border border-natural-gray02 rounded-sm px-2 py-1 w-full",
+        "border border-natural-gray02 rounded-sm px-2 py-2 w-full",
         error && "border-red-500",
       )}
       {...props}

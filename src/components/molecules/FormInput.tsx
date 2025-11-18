@@ -8,7 +8,7 @@ export const FormInput: React.FC<Props> = (props: Props) => {
   const { label, required, children } = props;
 
   return (
-    <>
+    <div>
       <div className="flex mb-1">
         {label && (
           <label htmlFor="input" className="text-sm">
@@ -23,6 +23,6 @@ export const FormInput: React.FC<Props> = (props: Props) => {
         )}
       </div>
       {children}
-    </>
+    </div>
   );
 };
