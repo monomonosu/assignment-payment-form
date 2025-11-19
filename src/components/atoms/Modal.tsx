@@ -19,6 +19,8 @@ export const Modal: React.FC<TextInputProps> = ({
   children,
   ...props
 }) => {
+  if (typeof document === "undefined") return null;
+
   if (!isOpen) {
     return null;
   }
