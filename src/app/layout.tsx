@@ -27,7 +27,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* NOTE: 全体的なレイアウトに差異がある場合、下記のpaddingは入れない想定です。 */}
+        <div className="p-8">{children}</div>
       </body>
     </html>
   );

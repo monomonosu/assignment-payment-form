@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 type Props = {
   label?: string;
   required?: boolean;
@@ -9,7 +11,7 @@ export const FormInput: React.FC<Props> = (props: Props) => {
 
   return (
     <div>
-      <div className="flex mb-1">
+      <div className={clsx("flex mb-1", !label && "mt-5")}>
         {label && (
           <label htmlFor="input" className="text-sm">
             {label}

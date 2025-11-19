@@ -6,7 +6,7 @@ import {
 
 // NOTE:schemaファイルはそれぞれページ毎ののfeatureディレクトリで作成するようなイメージです。今回はページが１ページになるのでtopに置いています。
 
-export const purchaseSchema = z.object({
+export const paymentSchema = z.object({
   last_name: requiredString("姓"),
   first_name: requiredString("名"),
   phone_number: maxNumberLengthSchema("電話番号", 11),
@@ -18,9 +18,9 @@ export const purchaseSchema = z.object({
   payment_type: requiredString("支払い方法"),
 });
 
-export type PurchaseForm = z.infer<typeof purchaseSchema>;
+export type PaymentFormType = z.infer<typeof paymentSchema>;
 
-export const defaultValues: PurchaseForm = {
+export const defaultValues: PaymentFormType = {
   last_name: "",
   first_name: "",
   phone_number: "",
