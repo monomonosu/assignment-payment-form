@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 
 interface ErrorMessageProps extends HTMLAttributes<HTMLDivElement> {
   message: string | undefined;

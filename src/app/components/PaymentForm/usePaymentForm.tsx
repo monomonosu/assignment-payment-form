@@ -1,15 +1,9 @@
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useMemo } from "react";
-import { useForm } from "react-hook-form";
 import useSWR from "swr";
-import {
-  defaultValues,
-  type PaymentFormType,
-  paymentSchema,
-} from "@/app/schema";
 
 export const usePaymentForm = () => {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
   const { data: prefecturesData } = useSWR("/api/prefectures", fetcher);
   const { data: paymentsData } = useSWR("/api/payments", fetcher);
 
@@ -33,14 +27,8 @@ export const usePaymentForm = () => {
     );
   }, [paymentsData]);
 
-  const form = useForm<PaymentFormType>({
-    resolver: zodResolver(paymentSchema),
-    defaultValues: defaultValues,
-  });
-
   return {
     prefectures,
     payments,
-    form,
   };
 };
