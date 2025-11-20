@@ -25,10 +25,11 @@ export const GapWrapper: React.FC<GapWrapperProps> = ({
 
 export const CenterWrapper: React.FC<InputHTMLAttributes<HTMLDivElement>> = ({
   children,
+  className,
   ...props
 }) => {
   return (
-    <div className="flex justify-center items-center" {...props}>
+    <div {...props} className={`flex justify-center items-center ${className}`}>
       {children}
     </div>
   );
