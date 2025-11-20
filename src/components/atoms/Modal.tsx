@@ -1,6 +1,7 @@
 "use client";
 
 import type { InputHTMLAttributes } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
 import { RxCross1 } from "react-icons/rx";
@@ -19,6 +20,17 @@ export const Modal: React.FC<TextInputProps> = ({
   children,
   ...props
 }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen]);
+
   if (typeof document === "undefined") return null;
 
   if (!isOpen) {
