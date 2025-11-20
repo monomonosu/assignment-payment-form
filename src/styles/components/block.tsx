@@ -9,7 +9,7 @@ export const ConfirmBlock: React.FC<ConfirmBlockProps> = ({
   ...props
 }) => {
   return (
-    <div {...props} className="border border-natural-gray02 p-2">
+    <div {...props} className="border border-natural-gray02 p-2 break-all">
       {children}
     </div>
   );

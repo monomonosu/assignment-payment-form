@@ -39,7 +39,7 @@ export const Modal: React.FC<TextInputProps> = ({
     >
       <div
         className="
-            relative w-full max-w-1/2 rounded-lg bg-white text-gray-900
+            relative w-full max-w-7xl mx-8 rounded-lg bg-white text-gray-900
             shadow-lg
           "
         role="dialog"
