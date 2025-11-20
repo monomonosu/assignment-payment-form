@@ -42,10 +42,10 @@ export const PaymentForm = ({ form, onSubmit }: PaymentFormProps) => {
                 <TextInput
                   id="name"
                   placeholder="姓"
-                  {...register("first_name")}
-                  error={"first_name" in errors}
+                  {...register("last_name")}
+                  error={"last_name" in errors}
                 />
-                <ErrorMessage message={errors.first_name?.message} />
+                <ErrorMessage message={errors.last_name?.message} />
               </FormInput>
             </div>
 
@@ -54,11 +54,11 @@ export const PaymentForm = ({ form, onSubmit }: PaymentFormProps) => {
                 <TextInput
                   id="name"
                   placeholder="名"
-                  {...register("last_name")}
-                  error={"last_name" in errors}
+                  {...register("first_name")}
+                  error={"first_name" in errors}
                 />
               </FormInput>
-              <ErrorMessage message={errors.last_name?.message} />
+              <ErrorMessage message={errors.first_name?.message} />
             </div>
           </GapWrapper>
 
@@ -153,7 +153,13 @@ export const PaymentForm = ({ form, onSubmit }: PaymentFormProps) => {
       <CenterWrapper>
         <GapWrapper direction="column" gap={16}>
           <Button onClick={handleSubmit(onSubmit)}>次へ進む</Button>
-          <Button type="button" variants="outlined" onClick={() => {}}>
+          <Button
+            type="button"
+            variants="outlined"
+            onClick={() => {
+              alert("戻る");
+            }}
+          >
             戻る
           </Button>
         </GapWrapper>
