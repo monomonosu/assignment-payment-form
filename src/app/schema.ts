@@ -25,9 +25,9 @@ export const defaultValues: PaymentFormType = {
   first_name: "",
   phone_number: "",
   post_number: "",
-  prefecture: "",
+  prefecture: "13",
   city: "",
   address: "",
   building: "",
-  payment_type: "",
+  payment_type: "1",
 };

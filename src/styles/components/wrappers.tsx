@@ -10,12 +10,14 @@ export const GapWrapper: React.FC<GapWrapperProps> = ({
   direction = "row",
   gap = 8,
   children,
+  className,
+  style,
   ...props
 }) => {
   return (
     <div
-      className="flex"
-      style={{ flexDirection: direction, gap: `${gap}px` }}
+      className={`flex ${className ?? ""}`}
+      style={{ flexDirection: direction, gap: `${gap}px`, ...style }}
       {...props}
     >
       {children}

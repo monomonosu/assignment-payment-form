@@ -20,6 +20,7 @@ export const PaymentForm = ({ form, onSubmit }: PaymentFormProps) => {
 
   const {
     register,
+    watch,
     handleSubmit,
     formState: { errors },
   } = form;
@@ -36,7 +37,11 @@ export const PaymentForm = ({ form, onSubmit }: PaymentFormProps) => {
         </div>
 
         <GapWrapper direction="column" gap={24}>
-          <GapWrapper direction="row" gap={16}>
+          <GapWrapper
+            direction="row"
+            gap={16}
+            className="flex-wrap md:flex-nowrap"
+          >
             <div className="w-full">
               <FormInput label="氏名" required>
                 <TextInput
@@ -97,6 +102,7 @@ export const PaymentForm = ({ form, onSubmit }: PaymentFormProps) => {
               <Select
                 options={prefectures}
                 placeholder="東京都"
+                value={watch("prefecture")}
                 {...register("prefecture")}
                 error={"prefecture" in errors}
               />

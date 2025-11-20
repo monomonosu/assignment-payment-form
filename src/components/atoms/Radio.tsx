@@ -26,7 +26,7 @@ export const Radio: React.FC<RadioProps> = ({
           {...register}
           {...props}
         />
-        {label}
+        <span className="flex-1 break-all leading-snug">{label}</span>
       </label>
     </div>
   );
